@@ -3,7 +3,7 @@ export const defaultTripData = {
   daughter: {
     name: 'Morgan',
     nameEn: 'Morgan',
-    phone: '+1 (206) 555-0000', // TODO: 替换成真实手机号
+    phone: '+1 (206) 941-2779',
     wechat: 'morgan_lan',
   },
   city: 'Seattle',
