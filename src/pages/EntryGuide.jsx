@@ -8,29 +8,8 @@ const STEPS = [
     icon: '🛬',
     titleZh: '下机',
     titleEn: 'Deplane',
-    descZh: '跟着人流走，找头顶的 "Baggage Claim / Passport Control" 标识，沿指示牌一直走。',
-    descEn: 'Follow the crowd. Look for "Baggage Claim / Passport Control" overhead signs and keep walking.',
-  },
-  {
-    icon: '🛂',
-    titleZh: '护照检查',
-    titleEn: 'Passport Control',
-    descZh: '排队等候，轮到你时把护照递给移民官，回答几个简单问题。',
-    descEn: 'Queue up. When called, hand your passport to the officer and answer a few questions.',
-    qa: [
-      {
-        qZh: '来美国的目的？',        qEn: 'Purpose of your visit?',
-        aZh: '探望女儿 / 儿子',       aEn: '"Visiting my daughter / son"',
-      },
-      {
-        qZh: '打算住多久？',          qEn: 'How long will you stay?',
-        aZh: '说具体时间，如"3 weeks"', aEn: '"3 weeks" / "One month"',
-      },
-      {
-        qZh: '住在哪里？',            qEn: 'Where are you staying?',
-        aZh: '报出女儿地址或酒店名称', aEn: 'Give your daughter\'s address or hotel name',
-      },
-    ],
+    descZh: '跟着人流走，找头顶的 "Baggage Claim" 标识，沿指示牌一直走。',
+    descEn: 'Follow the crowd. Look for "Baggage Claim" overhead signs and keep walking.',
   },
   {
     icon: '🧳',
@@ -40,11 +19,25 @@ const STEPS = [
     descEn: 'Find your flight number on the screen. Go to the matching carousel number and wait.',
   },
   {
-    icon: '📋',
-    titleZh: '海关申报',
-    titleEn: 'Customs Declaration',
-    descZh: '把飞机上填好的申报表交给海关官员，如有食品须如实申报。无禁带物品可快速通过。',
-    descEn: 'Hand in your CBP Declaration Form. Declare any food items. Nothing prohibited? Walk through quickly.',
+    icon: '🛂',
+    titleZh: '护照检查',
+    titleEn: 'Passport Control',
+    descZh: '取完行李后排队过护照检查，把护照递给移民官，回答几个简单问题。',
+    descEn: 'After collecting bags, queue for passport control. Hand your passport to the officer and answer a few questions.',
+    qa: [
+      {
+        qZh: '来美国的目的？',         qEn: 'Purpose of your visit?',
+        aZh: '探望女儿 / 儿子',        aEn: '"Visiting my daughter / son"',
+      },
+      {
+        qZh: '打算住多久？',           qEn: 'How long will you stay?',
+        aZh: '说具体时间，如"3 weeks"', aEn: '"3 weeks" / "One month"',
+      },
+      {
+        qZh: '住在哪里？',             qEn: 'Where are you staying?',
+        aZh: '报出女儿地址或酒店名称',  aEn: 'Give your daughter\'s address or hotel name',
+      },
+    ],
   },
   {
     icon: '🚪',
