@@ -1,7 +1,7 @@
 export const defaultTripData = {
   traveler: '爸爸妈妈',
   daughter: {
-    name: 'Morgan',
+    name: '蓝图',
     nameEn: 'Morgan',
     phone: '+1 (206) 941-2779',
     wechat: 'morgan_lan',
