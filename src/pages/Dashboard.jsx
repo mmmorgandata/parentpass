@@ -200,9 +200,8 @@ export default function Dashboard() {
     <div className="p-4">
       {/* Header */}
       <div className="bg-indigo-600 text-white rounded-2xl p-4 mb-4">
-        <p className="text-indigo-200 text-sm">{d.welcomeTo[lang]}</p>
-        <h1 className="text-2xl font-bold mt-0.5">
-          {lang === 'zh' ? tripData.cityZh : tripData.city} 🗺️
+        <h1 className="text-2xl font-bold">
+          {d.welcomeTo[lang]} {lang === 'zh' ? '美国' : 'America'} 🇺🇸
         </h1>
         <div className="flex items-center justify-between mt-3">
           <div>
