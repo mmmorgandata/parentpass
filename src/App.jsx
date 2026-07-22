@@ -9,42 +9,51 @@ import SOSPage from './pages/SOSPage'
 import CityGuide from './pages/CityGuide'
 import TripBuilder from './pages/TripBuilder'
 
+function PhoneFrame({ children }) {
+  const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768
+  if (!isDesktop) return <>{children}</>
+
+  return (
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <div
+        className="relative rounded-[7%] overflow-hidden bg-white"
+        style={{
+          height: 'min(852px, 88vh)',
+          width: 'calc(min(852px, 88vh) * 393 / 852)',
+          // box-shadow acts as the phone border — drawn outside, follows border-radius
+          boxShadow: '0 0 0 10px #1c1c1e, 0 0 0 11px #3a3a3c, 0 30px 70px rgba(0,0,0,0.4)',
+        }}
+      >
+        {/* Notch */}
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 bg-[#1c1c1e] rounded-b-3xl z-50"
+          style={{ width: '28%', height: '3.5%' }}
+        />
+        {children}
+      </div>
+    </div>
+  )
+}
+
 export default function App() {
   return (
     <LanguageProvider>
       <TripProvider>
-        {/* Desktop: center the app inside a phone mockup frame */}
-        <div className="md:min-h-screen md:bg-gray-100 md:flex md:items-center md:justify-center">
-          {/* Sizing wrapper — proportional to iPhone 14 */}
-          <div
-            className="relative"
-            style={{
-              height: 'min(852px, 88vh)',
-              width: 'calc(min(852px, 88vh) * 393 / 852)',
-            }}
-          >
-            {/* Screen content — clipped to phone screen shape */}
-            <div className="absolute inset-0 rounded-[7%] overflow-hidden bg-white">
-              {/* Notch */}
-              <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[28%] h-[3.5%] bg-gray-900 rounded-b-3xl z-[100]" />
-              <BrowserRouter>
-                <Routes>
-                  <Route element={<Layout />}>
-                    <Route path="/" element={<Dashboard />} />
-                    <Route path="/translate" element={<EntryGuide />} />
-                    <Route path="/phrases" element={<EmergencyPhrases />} />
-                    <Route path="/sos" element={<SOSPage />} />
-                    <Route path="/city" element={<CityGuide />} />
-                    <Route path="*" element={<Navigate to="/" replace />} />
-                  </Route>
-                  <Route path="/setup" element={<TripBuilder />} />
-                </Routes>
-              </BrowserRouter>
-            </div>
-            {/* Phone border frame — overlay on top so rounded corners are always visible */}
-            <div className="hidden md:block absolute inset-0 rounded-[7%] border-[10px] border-gray-900 shadow-[0_30px_80px_rgba(0,0,0,0.35)] pointer-events-none z-[200]" />
-          </div>
-        </div>
+        <PhoneFrame>
+          <BrowserRouter>
+            <Routes>
+              <Route element={<Layout />}>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/translate" element={<EntryGuide />} />
+                <Route path="/phrases" element={<EmergencyPhrases />} />
+                <Route path="/sos" element={<SOSPage />} />
+                <Route path="/city" element={<CityGuide />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Route>
+              <Route path="/setup" element={<TripBuilder />} />
+            </Routes>
+          </BrowserRouter>
+        </PhoneFrame>
       </TripProvider>
     </LanguageProvider>
   )
