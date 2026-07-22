@@ -16,7 +16,7 @@ function PhoneFrame({ children }) {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div
-        className="relative rounded-[7%] overflow-hidden bg-white"
+        className="relative rounded-[12%] overflow-hidden bg-white"
         style={{
           height: 'min(852px, 88vh)',
           width: 'calc(min(852px, 88vh) * 393 / 852)',
@@ -24,10 +24,10 @@ function PhoneFrame({ children }) {
           boxShadow: '0 0 0 10px #1c1c1e, 0 0 0 11px #3a3a3c, 0 30px 70px rgba(0,0,0,0.4)',
         }}
       >
-        {/* Notch */}
+        {/* Dynamic Island */}
         <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 bg-[#1c1c1e] rounded-b-3xl z-50"
-          style={{ width: '28%', height: '3.5%' }}
+          className="absolute left-1/2 -translate-x-1/2 bg-[#1c1c1e] rounded-full z-50"
+          style={{ top: '1.4%', width: '32%', height: '4.3%' }}
         />
         {children}
       </div>
