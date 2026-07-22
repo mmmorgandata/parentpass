@@ -203,7 +203,7 @@ export default function Dashboard() {
       {/* Header */}
       <div className="bg-indigo-600 text-white rounded-2xl p-4 mb-4">
         <h1 className="text-2xl font-bold">Enjoy Your Trip ✈️</h1>
-        <p className="text-indigo-200 text-sm mt-0.5">your trip 小助手!</p>
+        <p className="text-indigo-200 text-sm mt-0.5">{lang === 'zh' ? 'your trip 小助手!' : 'your trip agent!'}</p>
         <div className="flex items-center justify-between mt-3">
           <div>
             <p className="text-indigo-200 text-xs">{d.contactLabel[lang]}</p>
