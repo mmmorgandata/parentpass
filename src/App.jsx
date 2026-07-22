@@ -13,23 +13,37 @@ function PhoneFrame({ children }) {
   const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768
   if (!isDesktop) return <>{children}</>
 
+  // Scale the original 393×852 frame to fit 88% of viewport height
+  const scale = Math.min(1, (window.innerHeight * 0.88) / 852)
+
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div
-        className="relative rounded-[12%] overflow-hidden bg-white"
-        style={{
-          height: 'min(852px, 88vh)',
-          width: 'calc(min(852px, 88vh) * 393 / 852)',
-          // box-shadow acts as the phone border — drawn outside, follows border-radius
-          boxShadow: '0 0 0 10px #1c1c1e, 0 0 0 11px #3a3a3c, 0 30px 70px rgba(0,0,0,0.4)',
-        }}
-      >
-        {/* Dynamic Island */}
+      {/* zoom shrinks layout footprint too, not just visual size */}
+      <div style={{ zoom: scale }}>
         <div
-          className="absolute left-1/2 -translate-x-1/2 bg-[#1c1c1e] rounded-full z-50"
-          style={{ top: '1.4%', width: '32%', height: '4.3%' }}
-        />
-        {children}
+          style={{
+            width: 393,
+            height: 852,
+            borderRadius: 54,
+            border: '10px solid #1c1c1e',
+            overflow: 'hidden',
+            position: 'relative',
+            boxShadow: '0 30px 80px rgba(0,0,0,0.35)',
+            background: 'white',
+          }}
+        >
+          {/* Notch */}
+          <div style={{
+            position: 'absolute', top: 0, left: '50%',
+            transform: 'translateX(-50%)',
+            width: 112, height: 28,
+            background: '#1c1c1e',
+            borderBottomLeftRadius: 16,
+            borderBottomRightRadius: 16,
+            zIndex: 50,
+          }} />
+          {children}
+        </div>
       </div>
     </div>
   )
