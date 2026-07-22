@@ -8,9 +8,9 @@ export default function Layout() {
   const { pathname } = useLocation()
 
   return (
-    <div className="min-h-screen flex flex-col max-w-md mx-auto bg-white relative">
+    <div className="h-screen md:h-full flex flex-col max-w-md mx-auto bg-white relative">
       {/* Top bar: setup icon (left) + language toggle (right) */}
-      <div className="sticky top-0 z-40 flex items-center justify-between px-3 pt-3 pb-1 bg-white/80 backdrop-blur-sm">
+      <div className="z-40 flex items-center justify-between px-3 pt-3 pb-1 md:pt-8 bg-white/80 backdrop-blur-sm">
         <div>
           {pathname === '/' && (
             <button
@@ -30,7 +30,7 @@ export default function Layout() {
         </button>
       </div>
 
-      <main className="flex-1 overflow-y-auto pb-20">
+      <main className="flex-1 overflow-y-auto">
         <Outlet />
       </main>
       <BottomNav />
