@@ -15,7 +15,10 @@ function loadInitialData() {
   }
   const cached = localStorage.getItem('parentpass_trip')
   if (cached) {
-    try { return JSON.parse(atob(cached)) } catch {}
+    try {
+      const data = JSON.parse(atob(cached))
+      if (data?.events?.length > 0) return data
+    } catch {}
   }
   return defaultTripData
 }

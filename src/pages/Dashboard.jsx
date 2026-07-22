@@ -1,6 +1,5 @@
 import { useState, useRef, useCallback } from 'react'
 import { useTrip } from '../context/TripContext'
-import { getUpcomingEvents } from '../data/tripData'
 import { generateICS, downloadICS } from '../api/ics'
 import { useLang } from '../context/LanguageContext'
 import { t } from '../i18n/translations'
@@ -174,8 +173,11 @@ export default function Dashboard() {
     setTimeout(() => setToast(null), 2500)
   }, [])
 
-  const upcoming = getUpcomingEvents(tripData.events)
-  const grouped = groupByDate(upcoming)
+  const allEvents = [...tripData.events].sort((a, b) => {
+    if (a.date !== b.date) return a.date.localeCompare(b.date)
+    return a.time.localeCompare(b.time)
+  })
+  const grouped = groupByDate(allEvents)
 
   function handleExportCalendar() {
     const ics = generateICS(tripData.events, tripData.traveler)
@@ -200,9 +202,8 @@ export default function Dashboard() {
     <div className="p-4">
       {/* Header */}
       <div className="bg-indigo-600 text-white rounded-2xl p-4 mb-4">
-        <h1 className="text-2xl font-bold">
-          {d.welcomeTo[lang]} {lang === 'zh' ? '美国' : 'America'} 🇺🇸
-        </h1>
+        <h1 className="text-2xl font-bold">Enjoy Your Trip ✈️</h1>
+        <p className="text-indigo-200 text-sm mt-0.5">your trip 小助手!</p>
         <div className="flex items-center justify-between mt-3">
           <div>
             <p className="text-indigo-200 text-xs">{d.contactLabel[lang]}</p>
@@ -229,7 +230,7 @@ export default function Dashboard() {
       )}
 
       {/* Swipe hint */}
-      {upcoming.length > 0 && (
+      {allEvents.length > 0 && (
         <p className="text-xs text-gray-400 text-center mb-3">
           {lang === 'zh' ? '← 向左滑动行程可修改或删除' : '← Swipe left on an event to edit or delete'}
         </p>
