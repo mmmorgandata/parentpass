@@ -14,7 +14,7 @@ export default function BottomNav() {
   const { lang } = useLang()
 
   return (
-    <nav className="w-full bg-white border-t border-gray-200 flex z-50">
+    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white border-t border-gray-200 flex z-50 md:relative md:bottom-auto md:left-auto md:translate-x-0 md:max-w-none">
       {tabs.map(({ to, icon, key }) => (
         <NavLink
           key={to}
