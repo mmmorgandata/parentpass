@@ -16,7 +16,7 @@ export default function SOSPage() {
       value: tripData.daughter.phone,
       action: `tel:${tripData.daughter.phone}`,
       actionLabel: d.dialBtn[lang],
-      color: 'bg-indigo-50 border-indigo-200',
+      color: 'bg-white border-[#E5E0DA]',
       btnColor: 'bg-indigo-600',
     },
     {
@@ -25,7 +25,7 @@ export default function SOSPage() {
       value: '911',
       action: 'tel:911',
       actionLabel: d.dial911[lang],
-      color: 'bg-red-50 border-red-200',
+      color: 'bg-white border-red-300',
       btnColor: 'bg-red-600',
     },
     {
@@ -33,7 +33,7 @@ export default function SOSPage() {
       label: d.hotel[lang],
       value: lang === 'zh' ? (hotel?.addressZh ?? '见订单') : (hotel?.addressEn ?? 'See booking'),
       action: null,
-      color: 'bg-yellow-50 border-yellow-200',
+      color: 'bg-white border-[#E5E0DA]',
       btnColor: null,
     },
     {
@@ -42,8 +42,8 @@ export default function SOSPage() {
       value: '+1 (202) 495-2266',
       action: 'tel:+12024952266',
       actionLabel: d.dial[lang],
-      color: 'bg-green-50 border-green-200',
-      btnColor: 'bg-green-600',
+      color: 'bg-white border-[#E5E0DA]',
+      btnColor: 'bg-indigo-600',
     },
   ]
 
@@ -73,8 +73,8 @@ export default function SOSPage() {
         ))}
       </div>
 
-      <div className="bg-red-50 border border-red-200 rounded-xl p-4">
-        <p className="font-semibold text-red-700 mb-3">📋 {d.howTo911[lang]}</p>
+      <div className="bg-white border border-[#E5E0DA] rounded-xl p-4">
+        <p className="font-semibold text-gray-700 mb-3">📋 {d.howTo911[lang]}</p>
         <ol className="space-y-2">
           {d.steps.map((step, i) => (
             <li key={i} className="flex items-start gap-3">

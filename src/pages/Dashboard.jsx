@@ -10,10 +10,10 @@ const ACTION_W = 144   // px width of the two action buttons combined
 const SNAP_THRESHOLD = 60
 
 const typeColor = {
-  flight:     'bg-sky-50 border-sky-200',
-  hotel:      'bg-amber-50 border-amber-200',
-  activity:   'bg-emerald-50 border-emerald-200',
-  restaurant: 'bg-orange-50 border-orange-200',
+  flight:     'bg-white border-[#E5E0DA] border-l-4 border-l-sky-400',
+  hotel:      'bg-white border-[#E5E0DA] border-l-4 border-l-amber-400',
+  activity:   'bg-white border-[#E5E0DA] border-l-4 border-l-[#4A7C2F]',
+  restaurant: 'bg-white border-[#E5E0DA] border-l-4 border-l-orange-400',
 }
 
 function formatDate(dateStr, lang) {
@@ -85,7 +85,7 @@ function SwipeCard({ children, onEdit, onDelete }) {
       >
         <button
           onClick={() => { close(); onEdit() }}
-          className="flex-1 bg-indigo-500 text-white text-sm font-semibold flex flex-col items-center justify-center gap-1"
+          className="flex-1 bg-[#4A7C2F] text-white text-sm font-semibold flex flex-col items-center justify-center gap-1"
         >
           <span className="text-lg">✏️</span>
           <span>修改</span>
@@ -119,12 +119,12 @@ function SwipeCard({ children, onEdit, onDelete }) {
 // ── EventCard ──────────────────────────────────────────────────────────────
 function EventCard({ event, lang, onEdit, onDelete }) {
   const d = t.dashboard
-  const colorClass = typeColor[event.type] || 'bg-gray-50 border-gray-200'
+  const colorClass = typeColor[event.type] || 'bg-white border-[#E5E0DA]'
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.addressEn)}`
 
   return (
     <SwipeCard onEdit={onEdit} onDelete={onDelete}>
-      <div className={`border rounded-xl p-4 ${colorClass}`}>
+      <div className={`border rounded-xl p-4 shadow-sm ${colorClass}`}>
         <p className="font-semibold text-base text-gray-800">
           {lang === 'zh' ? event.titleZh : event.titleEn}
         </p>
