@@ -10,9 +10,9 @@ const ACTION_W = 144   // px width of the two action buttons combined
 const SNAP_THRESHOLD = 60
 
 const typeColor = {
-  flight:     'bg-blue-50 border-blue-200',
-  hotel:      'bg-purple-50 border-purple-200',
-  activity:   'bg-green-50 border-green-200',
+  flight:     'bg-sky-50 border-sky-200',
+  hotel:      'bg-amber-50 border-amber-200',
+  activity:   'bg-emerald-50 border-emerald-200',
   restaurant: 'bg-orange-50 border-orange-200',
 }
 
@@ -202,7 +202,7 @@ export default function Dashboard() {
     <div className="p-4">
       {/* Header */}
       <div className="bg-indigo-600 text-white rounded-2xl p-4 mb-4">
-        <h1 className="text-2xl font-bold">Enjoy Your Trip ✈️</h1>
+        <h1 className="text-2xl font-bold font-heading tracking-wide">Enjoy Your Trip ✈️</h1>
         <p className="text-indigo-200 text-sm mt-0.5">{lang === 'zh' ? 'your trip 小助手!' : 'your trip agent!'}</p>
         <div className="flex items-center justify-between mt-3">
           <div>

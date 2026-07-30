@@ -8,7 +8,7 @@ export default function Layout() {
   const { pathname } = useLocation()
 
   return (
-    <div className="h-screen md:h-full flex flex-col max-w-md mx-auto bg-white relative">
+    <div className="h-screen md:h-full flex flex-col max-w-md mx-auto bg-[#FDFCFA] relative">
       {/* Top bar: setup icon (left) + language toggle (right) */}
       <div className="z-40 flex items-center justify-between px-3 pt-3 pb-1 md:pt-8 bg-white/80 backdrop-blur-sm">
         <div>

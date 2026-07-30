@@ -17,7 +17,7 @@ function PhoneFrame({ children }) {
   const scale = Math.min(1, (window.innerHeight * 0.88) / 852)
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="min-h-screen bg-[#E8E3DA] flex items-center justify-center">
       {/* zoom shrinks layout footprint too, not just visual size */}
       <div style={{ zoom: scale }}>
         <div
