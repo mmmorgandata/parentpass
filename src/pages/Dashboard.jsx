@@ -85,7 +85,7 @@ function SwipeCard({ children, onEdit, onDelete }) {
       >
         <button
           onClick={() => { close(); onEdit() }}
-          className="flex-1 bg-[#4A7C2F] text-white text-sm font-semibold flex flex-col items-center justify-center gap-1"
+          className="flex-1 bg-[#2C5A1C] text-white text-sm font-semibold flex flex-col items-center justify-center gap-1"
         >
           <span className="text-lg">✏️</span>
           <span>修改</span>

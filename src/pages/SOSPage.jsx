@@ -49,10 +49,10 @@ export default function SOSPage() {
 
   return (
     <div className="p-4">
-      <div className="bg-red-600 text-white rounded-2xl p-4 mb-5 text-center">
+      <div className="bg-white border border-[#E5E0DA] rounded-2xl p-4 mb-5 text-center shadow-sm">
         <p className="text-4xl mb-1">🆘</p>
-        <h2 className="text-xl font-bold">{d.title[lang]}</h2>
-        <p className="text-red-200 text-sm mt-1">{d.offlineNote[lang]}</p>
+        <h2 className="text-xl font-bold text-red-600">{d.title[lang]}</h2>
+        <p className="text-gray-400 text-sm mt-1">{d.offlineNote[lang]}</p>
       </div>
 
       <div className="flex flex-col gap-3 mb-5">

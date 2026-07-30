@@ -2,16 +2,16 @@
 
 @theme {
   /* Replace indigo → REI forest green across the entire app */
-  --color-indigo-50:  #EFF6E8;
-  --color-indigo-100: #D5EBBD;
-  --color-indigo-200: #AADA87;
-  --color-indigo-300: #7EC458;
-  --color-indigo-400: #5CAE3C;
-  --color-indigo-500: #4F9534;
-  --color-indigo-600: #4A7C2F;
-  --color-indigo-700: #3A6025;
-  --color-indigo-800: #2C491C;
-  --color-indigo-900: #1D3212;
+  --color-indigo-50:  #EAF2E4;
+  --color-indigo-100: #C8E0B8;
+  --color-indigo-200: #9DC880;
+  --color-indigo-300: #6EAD48;
+  --color-indigo-400: #4E9430;
+  --color-indigo-500: #3A7A22;
+  --color-indigo-600: #2C5A1C;
+  --color-indigo-700: #214516;
+  --color-indigo-800: #173210;
+  --color-indigo-900: #0E200A;
 
   /* Replace purple → warm earthy amber (hotel cards) */
   --color-purple-50:  #FAF6EF;
